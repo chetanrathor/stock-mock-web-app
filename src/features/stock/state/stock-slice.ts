@@ -23,7 +23,7 @@ export const fetchStock = createAsyncThunk('stock/:id', async (argument: string,
 })
 
 const initialState = {
-        stock: {_id:'default'},
+        stock: {},
         stocks: new Array(),
         stockId:''
 
@@ -39,7 +39,7 @@ export const stockSlice = createSlice({
             const { data } = payload
             return {
                 ...state,
-                stockId:data[0]._id ?? '',
+                // stock:data[0],
                 stocks: data
             }
         })
